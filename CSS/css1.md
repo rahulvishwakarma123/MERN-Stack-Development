@@ -668,4 +668,3 @@ animation: slideIn 1s ease-in-out 0.5s infinite alternate forwards;
 5. Combine animations with transitions for smoother effects.
 
 Animations can significantly enhance the user experience when used thoughtfully, making interfaces more interactive and visually appealing.
-
