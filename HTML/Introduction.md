@@ -1,3 +1,22 @@
+## Table of Contents
+
+1. [The Internet](#the-internet)
+    - [History of the Internet](#history-of-the-internet)
+    - [How the Internet Works](#how-the-internet-works)
+    - [Key Technologies](#key-technologies)
+    - [Impact of the Internet](#impact-of-the-internet)
+    - [Future of the Internet](#future-of-the-internet)
+2. [Introduction to HTML](#introduction-to-html)
+    - [New Features of HTML5](#new-features-of-html5)
+      - [1. New Semantic Elements](#1-new-semantic-elements)
+      - [2. Multimedia Elements](#2-multimedia-elements)
+      - [3. Graphics and Effects](#3-graphics-and-effects)
+      - [4. Form Enhancements](#4-form-enhancements)
+      - [5. Local Storage](#5-local-storage)
+      - [6. Geolocation API](#6-geolocation-api)
+      - [7. Web Workers](#7-web-workers)
+      - [8. Responsive Design](#8-responsive-design)
+
 # The Internet
 
 The Internet is a global network of interconnected computers that communicate and share information using standardized protocols. It has revolutionized the way we access information, communicate, and conduct business. Here are some key aspects of the Internet:
