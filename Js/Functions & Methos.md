@@ -1,3 +1,37 @@
+# Table of Contents
+
+1. [Functions in JavaScript](#functions-in-javascript)  
+    - [Types of Functions](#types-of-functions)  
+      - [Function Declaration](#function-declaration)  
+      - [Function Expression](#function-expression)  
+      - [Arrow Function](#arrow-function)  
+      - [Anonymous Function](#anonymous-function)  
+      - [Immediately Invoked Function Expression (IIFE)](#immediately-invoked-function-expression-iife)  
+    - [Key Features of Functions](#key-features-of-functions)  
+    - [Higher-Order Functions](#higher-order-functions)  
+    - [Functions with Arguments](#functions-with-arguments)  
+      - [Rest Parameters](#rest-parameters)  
+    - [The `return` Keyword](#the-return-keyword)  
+    - [Scope in JavaScript](#scope-in-javascript)  
+      - [Types of Scope](#types-of-scope)  
+         - [Global Scope](#global-scope)  
+         - [Local Scope](#local-scope)  
+         - [Block Scope](#block-scope)  
+         - [Function Scope](#function-scope)  
+      - [Lexical Scope](#lexical-scope)  
+      - [Scope Chain](#scope-chain)  
+
+2. [Methods in JavaScript](#methods-in-javascript)  
+    - [Defining Methods](#defining-methods)  
+    - [Shorthand Syntax (ES6)](#shorthand-syntax-es6)  
+    - [`this` Keyword in Methods](#this-keyword-in-methods)  
+    - [Common Built-in Methods](#common-built-in-methods)  
+      - [String Methods](#string-methods)  
+      - [Array Methods](#array-methods)  
+      - [Object Methods](#object-methods)  
+      - [Math Methods](#math-methods)  
+    - [Adding Methods to Prototypes](#adding-methods-to-prototypes)  
+
 # Functions in JavaScript
 
 Functions in JavaScript are reusable blocks of code designed to perform a specific task. They help in organizing code, improving readability, and reducing redundancy.
