@@ -3,11 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="./Assets/logo.png">
+    <title>Spotify - web player : Music for everyone</title>
 </head>
 <body>
-    <div class="container">
-        div.
+    <div class="main">
+        <div class="sidebar">
+            <div class="nav">
+                <div class="nav-options">
+                    <i class="fa-solid fa-house"></i>
+                    <a href="#">Home</a>
+                </div>
+                <div class="nav-options search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <a href="#">Search</a>
+                </div>
+                
+            </div>
+            <div class="library">
+                <div class="options">
+                    <div class="lib-options nav-options">
+                        <img src="./Assets/library_icon.png" alt="library image">
+                        <a href="#">Search</a>
+                    </div>
+                    <div class="icons">
+                        <i class="fa-solid fa-plus"></i>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="lib-box">
+                    <div class="box">
+                        <h3 class="box-heading">Create your first playlist.</h3>
+                        <p class="box-para">It's easy, we'll help you.</p>
+                        <button class="badge">Create playlist</button>
+                    </div>
+                    <div class="box">
+                        <h3 class="box-heading">Let's find some podcast to follow.</h3>
+                        <p class="box-para">We'll keep updated on new episods.</p>
+                        <button class="badge">Browse podcast</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="sticky-nav">
+                <div class="navLeft">
+                    <img src="./Assets/backward_icon.png" alt="">
+                    <img src="./Assets/forward_icon.png" alt="">
+                </div>
+                <div class="navRight">
+                    <button class="badge pointer">Explore Premium</button>
+                    <button class="badge pointer"><i class="fa-solid fa-circle-down"></i> Install app</button>
+                    <div class="userLogo pointer"><i class="fa-solid fa-user"></i></div>
+                </div>
+            </div>
+            <div class="playlistCards">
+                <div class="cardHeading">
+                    <p class="heading">Recently Played</p>
+                    <p class="pointer">Show All</p>
+                </div>
+                <div class="cardsContainer">
+                    <div class="card">
+                        <img src="./Assets/card1img.jpeg" alt="">
+                        <h4>True story bro!...</h4>
+                        <p>Spotify</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="playlistCards">
+                <div class="cardHeading">
+                    <p class="heading">Spotify originals & exclusive podcasts</p>
+                    <p class="pointer">Show All</p>
+                </div>
+                <div class="cardsContainer">
+                    <div class="card">
+                        <img src="./Assets/card5img.jpeg" alt="">
+                        <h4>True story bro!...</h4>
+                        <p>Spotify</p>
+                    </div>
+                    <div class="card">
+                        <img src="./Assets/card2img.jpeg" alt="">
+                        <h4>Chanakya neeti</h4>
+                        <p>Spotify</p>
+                    </div>
+                    <div class="card">
+                        <img src="./Assets/card3img.jpeg" alt="">
+                        <h4>True story bro!...</h4>
+                        <p>Spotify</p>
+                    </div>
+                    <div class="card">
+                        <img src="./Assets/card4img.jpeg" alt="">
+                        <h4>True story bro!...</h4>
+                        <p>Spotify</p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="playlistCards">
+                <div class="cardHeading">
+                    <p class="heading">Shows to try</p>
+                    <p class="pointer">Show All</p>
+                </div>
+                <div class="cardsContainer">
+                    <div class="card">
+                        <img src="./Assets/card1img.jpeg" alt="">
+                        <h4>True story bro!...</h4>
+                        <p>Spotify</p>
+                    </div>
+                    <div class="card">
+                        <img src="./Assets/card2img.jpeg" alt="">
+                        <h4>Chanakya neeti</h4>
+                        <p>Spotify</p>
+                    </div>
+                    <div class="card">
+                        <img src="./Assets/card3img.jpeg" alt="">
+                        <h4>True story bro!...</h4>
+                        <p>Spotify</p>
+                    </div>
+                    <div class="card">
+                        <img src="./Assets/card4img.jpeg" alt="">
+                        <h4>True story bro!...</h4>
+                        <p>Spotify</p>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <div class="footer">
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="music-player">
+            <div class="album">
+                <img class="albumImage" src="./Assets2/album_picture.jpeg" alt="">
+                <div class="title">
+                    <p class="songName pointer underline">Daylight</p>
+                    <p class="singerName underline pointer">Singer</p>
+                </div>
+                    <img class="heart hover pointer" src="./Assets2/album_icon1.png" alt="">
+                    <img class="caption hover pointer" src="./Assets2/album_icon2.png" alt="">
+            </div>
+            <div class="musicControler">
+                <div class="musicControls">
+                    <img class="pointer hover" src="./Assets/player_icon1.png" alt="">
+                    <img class="pointer hover" src="./Assets/player_icon2.png" alt="">
+                    <img class="playButton pointer" src="./Assets/player_icon3.png" alt="">
+                    <img class="pointer hover" src="./Assets/player_icon4.png" alt="">
+                    <img class="pointer hover" src="./Assets/player_icon5.png" alt="">
+                </div>
+                <div class="musicProgress">
+                    <p class="currentPlayTime">00:00</p>
+                    <input type="range" name="" id="">
+                    <p class="totalPlayTime">03:00</p>
+                </div>
+            </div>
+            <div class="optionIcons">
+                <img class="image1 pointer" src="./Assets2/controls_icon1.png" alt="">
+                <img class="image2 pointer" src="./Assets2/controld_icon2.png" alt="">
+                <img class="image3 pointer" src="./Assets2/controls_icon3.png" alt="">
+                <img class="image4 pointer" src="./Assets2/controls_icon4.png" alt="">
+                <img class="image5 pointer" src="./Assets2/controls_icon5.png" alt="">
+                <input type="range">
+            </div>
+        </div>
     </div>
 </body>
 </html>

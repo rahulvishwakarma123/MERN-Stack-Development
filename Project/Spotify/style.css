@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0px;
+    padding: 0px
+}
+body{
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    background-color: black;
+    color: white;
+    overflow: hidden;
+}
+.main{
+    display: flex;
+    padding: .5rem;
+}
+/* ======================================================== Sidebar styling ========================================= */
+.sidebar{
+    background-color: black;
+    height: 89vh;
+    width: 340px;
+    border-radius: 1rem; /* 16px */
+    display: flex;
+    flex-direction: column;
+
+}
+
+.music-player{
+    background-color: black;
+    height: 72px;
+    width: 100vw;
+    position: fixed;
+    bottom: 0px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.nav{
+    background-color: #121212;
+    height: 100px;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: .5rem .75rem;
+    padding-left: 2rem;
+}
+.nav-options{
+    line-height: 2.5rem;
+}
+.nav-options i {
+    font-size: 1.25rem;
+}
+.nav-options a {
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+.search{
+    opacity: .5;
+    transition: .2s;
+}
+.search:hover{
+    opacity: 1;
+}
+.library{
+    background-color: #121212;
+    border-radius: 1rem;
+    flex-grow: 1;
+    margin-top: .75rem;
+    padding: .5rem .75rem;
+}
+.options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.lib-options{
+    opacity: .5;
+    transition: .2s;
+}
+.lib-options:hover{
+    opacity: 1;
+}
+.lib-options img{
+    height: 1.25rem;
+    width: 1.25rem;
+    margin-left: 1rem;
+}
+.icons{
+    font-size: 1rem;
+}
+.icons i{
+    margin-right: 1rem;
+    opacity: .5;
+    transition: .2s;
+}
+.icons i:hover{
+    opacity: 1;
+}
+
+
+.box{
+    margin: 1rem 0;
+    min-height: 8rem;
+    background-color: #232323;
+    border-radius: 1rem;
+    padding: 1rem 1.2rem;
+}
+.box-heading{
+    margin-bottom: 1rem;
+}
+.box-para{
+    opacity: .7;
+    margin: .5rem 0;
+}
+.badge{
+    height: 2rem;
+    background-color: white;
+    border-radius: 100px;
+    border: none;
+    padding: 4px 16px 4px 16px;
+    /* width: fit-content; */
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+/* ===================================== Main content styling =========================================== */
+.main-content{
+    background-color: #121212;
+    height: 89vh;
+    flex-grow: 1;
+    border-radius: 1rem; /* 16px */
+    margin-left: .5rem;
+    padding: 0 1rem;
+    overflow: auto;
+}
+.sticky-nav{
+    height: 4rem;
+    position: sticky;
+    top: 0px;
+    background-color: #121212;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navRight{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.navRight .badge{
+    margin: 0;
+}
+.userLogo{
+    height: 2rem;
+    width: 2rem;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.playlistCards{
+    margin-top: 2rem;
+}
+.cardHeading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.cardHeading .heading{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.cardsContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+
+}
+.card{
+    background-color: black;
+    padding: 1rem;
+    display: inline-block;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+.card img{
+    height: 200px;
+    width: 200px;
+    border-radius: .5rem;
+}
+.card h4{
+    margin-top: .5rem;
+}
+.card p{
+    margin-top: 1rem;
+}
+.footer{
+    height: 30%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+}
+.line{
+    height: 50%;
+    width: 90%;
+    border-top: 1px solid white;
+    opacity: .5;
+}
+
+/* ======================================== Music player =================================== */
+
+.music-player{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* --------- 1st div -------------------------- */
+
+.album{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px;
+}
+.albumImage{
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+}
+.title p{
+    line-height: 20px;
+}
+.songName{
+    font-size: 15px;
+    font-weight: 600;
+    transition: .4s;
+}
+.singerName{
+    font-size: 13px;
+}
+.heart{
+    opacity: .5;
+    transition: .2s;
+}
+.caption{
+    width: 30px;
+    opacity: .5;
+    transition: .2s;
+}
+
+/* --------------2nd div --------------- */
+
+.musicControler{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.musicControls{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.musicControls img{
+    width: 15px;
+    opacity: .6;
+    transition: .2s;
+}
+.musicControls .playButton{
+    width: 30px;
+    opacity: 1;
+    transition: .2s;
+}
+.musicControls .playButton:hover{
+    transform: scale(1.2);
+}
+
+.musicProgress{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.musicProgress p{
+    font-size: 10px;
+}
+.musicProgress input{
+    height: 3px;
+    width: 40vw;
+    color: greenyellow;
+}
+/* ----------------3rd div ---------------- */
+
+.optionIcons{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.optionIcons img{
+    width: 20px;
+    height: 20px;
+}
+
+.optionIcons .image1{
+    height: 30px;
+    width: 30px;
+}
+.optionIcons .image2{
+    height: 30px;
+    width: 30px;
+}
+.optionIcons .image3{
+    height: 19px;
+    width: 18px;
+}
+.optionIcons .image4{
+    height: 15px;
+    width: 18px;
+}
+.optionIcons .image5{
+    height: 30px;
+    width: 30px;
+}
+.optionIcons input{
+    height: 5px;
+    width: 70px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hover:hover{
+    opacity: 1;
+}
+.pointer:hover{
+    cursor: pointer;
+}
+.underline:hover{
+    text-decoration: 2px underline;
+}
