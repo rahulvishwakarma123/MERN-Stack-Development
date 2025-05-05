@@ -1,0 +1,16 @@
+
+ <%- include("include/head.ejs") %> <!--do not use the \ before the path -->
+
+ <body>
+  <h1>This is the page of @<%=data.name%>.</h1>
+  <button>Follow</button>
+  <button>Message</button>
+  <p>Followers: <%= data.followers %> &nbsp;&nbsp;&nbsp;&nbsp; Following: <%= data.following %></p>
+  <hr>
+  <h2>Posts</h2>
+  <%for(post of data.posts){%>
+  <img src="<%= post.image%>" alt="">
+  <p>Likes: <%= post.likes %> &nbsp;&nbsp;&nbsp;&nbsp; Comments: <%= post.comments %></p>
+  <%}%>
+</body>
+</html>

@@ -25,6 +25,19 @@
     - [Example with Objects](#example-with-objects)
     - [Explanation](#explanation-2)
     - [Notes](#notes-1)
+7. [Serving Static Files in Express](#serving-static-files-in-express)
+    - [Basic Usage](#basic-usage)
+    - [Customizing the Static Folder Path](#customizing-the-static-folder-path)
+    - [Serving Multiple Static Directories](#serving-multiple-static-directories)
+    - [Adding a Virtual Path Prefix](#adding-a-virtual-path-prefix)
+    - [Notes](#notes-2)
+8. [Includes in EJS](#includes-in-ejs)
+    - [Syntax for Includes](#syntax-for-includes)
+    - [Example](#example-3)
+    - [Explanation](#explanation-3)
+    - [Notes](#notes-3)
+    - [Benefits of Using Includes](#benefits-of-using-includes)
+
 
 # Templating
 
@@ -237,3 +250,118 @@ You can also loop through the keys of an object using a `for-in` loop:
 - Avoid writing complex logic inside your templates to maintain readability.
 
 By using loops, you can efficiently render dynamic content based on your data.
+
+# Serving Static Files in Express
+
+Express provides a built-in middleware function, `express.static`, to serve static files such as images, CSS, JavaScript, and more. This is useful for serving assets that do not change dynamically.
+
+## Basic Usage
+
+To serve static files, use the `express.static` middleware and specify the folder containing your static assets:
+
+```javascript
+const express = require('express');
+const app = express();
+
+app.use(express.static('public')); // Serve files from the 'public' folder
+
+app.listen(3000, () => console.log('Server running on port 3000'));
+```
+
+In this example:
+- The `public` folder contains static files like `style.css`, `script.js`, or images.
+- These files can be accessed directly via their URLs (e.g., `http://localhost:3000/style.css`).
+
+## Customizing the Static Folder Path
+
+You can use the `path` module to define a custom path for your static files:
+
+```javascript
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, 'assets'))); // Serve files from the 'assets' folder
+```
+
+Here:
+- `path.join(__dirname, 'assets')` constructs the absolute path to the `assets` folder.
+- This approach is useful for organizing your project structure.
+
+## Serving Multiple Static Directories
+
+You can serve multiple static directories by calling `express.static` multiple times:
+
+```javascript
+app.use(express.static('public'));
+app.use(express.static('uploads'));
+```
+
+In this case:
+- Files in both `public` and `uploads` folders are accessible.
+- If files with the same name exist in both folders, the first folder takes precedence.
+
+## Adding a Virtual Path Prefix
+
+You can add a virtual path prefix to your static files to avoid exposing the folder structure:
+
+```javascript
+app.use('/static', express.static('public'));
+```
+
+Now, files in the `public` folder are accessible under the `/static` path (e.g., `http://localhost:3000/static/style.css`).
+
+## Notes
+- Ensure your static files are placed in the correct directory to avoid 404 errors.
+- Use proper caching headers for better performance when serving static files.
+
+By using `express.static`, you can efficiently serve static assets in your Express applications.
+
+# Includes in EJS
+
+EJS supports the concept of includes, which allows you to reuse common parts of your templates, such as headers, footers, or navigation menus. This helps in maintaining a clean and modular codebase.
+
+## Syntax for Includes
+
+To include a partial template in EJS, use the `<%- include() %>` syntax. The `include` function takes the relative path of the partial file as its argument.
+
+### Example:
+
+Suppose you have a file structure like this:
+
+```
+views/
+├── includes/
+│   ├── head.ejs
+│   ├── footer.ejs
+├── index.ejs
+```
+
+Here’s how you can include the `head.ejs` and `footer.ejs` files in your `index.ejs`:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include('includes/head') %>
+    </head>
+    <body>
+        <h1>Welcome to My Website</h1>
+        <p>This is the main content of the page.</p>
+        <%- include('includes/footer') %>
+    </body>
+</html>
+```
+
+### Explanation:
+- `<%- include('includes/head') %>`: Includes the content of the `head.ejs` file.
+- `<%- include('includes/footer') %>`: Includes the content of the `footer.ejs` file.
+
+### Notes:
+- The path provided to `include` is relative to the `views` directory.
+- Use `<%- %>` instead of `<%= %>` to avoid escaping the included content.
+
+## Benefits of Using Includes
+- **Reusability**: Write common components once and reuse them across multiple templates.
+- **Maintainability**: Update a single partial file to reflect changes across all templates.
+- **Modularity**: Keep your templates organized and easier to manage.
+
+By leveraging includes, you can create modular and maintainable EJS templates for your web applications.
