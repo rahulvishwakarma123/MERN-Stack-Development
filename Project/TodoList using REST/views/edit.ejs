@@ -10,7 +10,7 @@
     <section>
         <h1 class="heading">TO-DO LIST</h1>
         <div class="container">
-          <form method="post" action="/submit">
+          <form method="post" action="/lists/<%= task.id %>">
             <input type="text" name="input" value="<%= task.task %>">
             <button class="addBtn">Add Task</button>
           </form>
