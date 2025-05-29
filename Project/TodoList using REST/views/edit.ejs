@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Edit your task</title>
+</head>
+<body>
+    <section>
+        <h1 class="heading">TO-DO LIST</h1>
+        <div class="container">
+          <form method="post" action="/submit">
+            <input type="text" name="input" value="<%= task.task %>">
+            <button class="addBtn">Add Task</button>
+          </form>
+        </div>
+      </section>
+</body>
+</html>

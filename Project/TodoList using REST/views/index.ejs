@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <title>Todo List - Made your calls</title>
+</head>
+
+<body>
+  <section>
+    <h1 class="heading">TO-DO LIST</h1>
+    <div class="container">
+      <form method="post" action="/add">
+        <input type="text" name="input">
+        <button class="addBtn">Add Task</button>
+      </form>
+      <ul>
+        <p class="listHeading">All Todo's</p>
+        <% for(taskObj of allTasks) { %>
+            <li>
+                <p><%= taskObj.task %></p>
+                <div class="formBtns">
+                    <form method="post" action="/lists/<%= taskObj.id %>?_method=PATCH">
+                        <button class="editBtn btn">Edit</button>
+                    </form>
+                    <form method="post" action="/lists/<%= taskObj.id %>?_method=DELETE">
+                        <button class="deleteBtn btn">Delete</button>
+                    </form>
+                  
+                </div>
+              </li>
+        <% } %>
+      </ul>
+    </div>
+  </section>
+</body>
+
+</html>

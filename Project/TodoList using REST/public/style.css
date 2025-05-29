@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+section{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.heading{
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+.container{
+    background-color: beige;
+    height: 80vh;
+    width: 50vw;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.container form input{ 
+    width: 100%;
+    height: 2rem;
+    margin-bottom: .5rem;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+form .addBtn{
+    margin-left: 0px;
+    height: 2rem;
+    width: 100%;
+    border-radius: 1rem;
+    font-weight: 700;
+    font-size: 1rem;
+    word-spacing: 7px;
+    letter-spacing: 4px;
+
+}
+.container ul{
+    margin-top: 2rem;
+    width: 100%;
+}
+ul .listHeading{
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.container ul li{
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(237, 237, 172);
+    margin-bottom: .5rem;
+    min-height: 2rem;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+.container ul li p{
+    font-weight: 500;
+    flex-basis: 60%;
+    /* text-decoration: line-through; */
+}
+.formBtns{
+    display: flex;
+}
+li .btn{
+    height: 1.5rem;
+    width: 4rem;
+    font-size: .8rem;
+    font-weight: 600;
+    border-radius: 1rem;
+    border: none;
+    background: beige;
+    transition: .3s;
+    margin-left: .5rem;
+}
+li .btn a{
+    text-decoration: none;
+    color:black;
+}
+li .deleteBtn:hover{
+    background-color: red;
+}
+li .editBtn:hover{
+    background-color: greenyellow;
+}
+button:hover{
+    cursor: pointer;
+}
