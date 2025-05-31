@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All users</title>
+  <style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    table, th, td {
+        border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>All users</h1>
+    <table>
+      <tr>
+        <td>No.</td>
+        <th>Id</th>
+        <th>Email</th>
+        <th>Username</th>
+      </tr>
+      <% let i = 1 %>
+      <% for(user of users) { %>
+        <tr>
+            <td><%= `${i}.` %></td>
+            <td><%= user.id %></td>
+            <td><%= user.email %></td>
+            <td><%= user.username %></td>
+            <td>
+                <form action="/user/<%= user.id %>" method="get">
+                    <button>Edit user</button>
+                </form>
+            </td>
+            <td>
+                <form action="/user/<%= user.id %>/delete" method="get">
+                    <button>Delete user</button>
+                </form>
+            </td>
+        </tr>
+        <% i = i + 1 %>
+      <% } %>
+    </table>
+
+  </div>
+</body>
+
+</html>

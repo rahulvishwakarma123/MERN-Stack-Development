@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll now</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter your details</h1>
+        <form method="post" action="/users/<%= id %>">
+            <input type="text" name="username" placeholder="Enter your username">
+            <input type="email" name="email" placeholder="Enter your email">
+            <input type="password" name="password" placeholder="Enter your password">
+            <button>Enroll now</button>
+        </form>
+    </div>
+</body>
+</html>
