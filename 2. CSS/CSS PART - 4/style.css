@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.box{
+    height: 300px;
+    width: 300px;
+    margin: 10px;
+    /* background-color: rgb(255, 0, 0); */
+    background-image: url("baclgroundImage.jpg");
+    /* background-size:contain; /* this property repeat the image. */
+    background-size: cover; /* this property crops the image.*/
+    background-position: center;
+    /* background-size: auto; /* this property stretchs the image. */
+    transition:.2s;
+    /* opacity: 0.5; */
+    /* box-shadow: 20px 20px 20px 10px rgb(0, 0, 0); */
+}
+/* .box:hover{
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+    border: 2px solid black;
+    transform: rotate(720deg);
+    scale: 0.5;
+    button{
+        background-color: red;
+        font:bold;
+        }
+        } */
+        
+.box:hover{
+    box-shadow: 2px 9px 20px 7px rgb(0, 0, 0);
+}
+button{
+    transition: 1s;
+    background-color: pink;
+    color: black;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 10px;
+}
