@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    font-family: Arial, sans-serif;
+}
+
+.container{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.chats{
+    background-color: aquamarine;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    flex-grow: 1;
+}
+.chats p{
+    margin-bottom: 5px;
+}
+.chats p:last-child{
+    margin-bottom: 0;
+}
+button{
+    margin-top: 1rem;
+}
+.createBtn{
+    background-color: rgb(0, 189, 0);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto;
+    text-decoration: none;
+}
+
+.createBtn:hover {
+    background-color: green;
+}
+
+.createBtn a {
+    color: white;
+    text-decoration: none;
+}

@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    background-color: bisque;
+    width: 50vw;
+    height: 50vh;
+    margin: 0 auto;
+    padding: 1rem;
+    margin-top: 10rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+.container h1{
+    margin-bottom: 1rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+input{
+    height: 2rem;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+textarea{
+    border-radius: .5rem;
+    padding: 1rem;
+    resize: none;
+}
+button{
+    height: 2rem;
+    border-radius: 1rem;
+    background-color: green;
+    font: 900;
+    color: white;
+    font-size: 1rem;
+    letter-spacing: .5rem;
+}

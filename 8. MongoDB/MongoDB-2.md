@@ -1,3 +1,32 @@
+# Table of Contents
+
+1. [Inserting Documents](#inserting-documents-insert-and-insertmany-in-mongoose)
+   - [insert (Single Document Insertion)](#insert-single-document-insertion)
+   - [insertMany (Multiple Document Insertion)](#insertmany-multiple-document-insertion)
+
+2. [Querying Documents](#querying-documents-find-in-mongoose)
+   - [find (Retrieving Multiple Documents)](#find-retrieving-multiple-documents)
+
+3. [Updating Documents](#updating-documents-updateone-and-updatemany-in-mongoose)
+   - [updateOne (Updating a Single Document)](#updateone-updating-a-single-document)
+   - [updateMany (Updating Multiple Documents)](#updatemany-updating-multiple-documents)
+
+4. [Updating and Returning Documents](#updating-and-returning-documents-findoneandupdate-and-findbyidandupdate-in-mongoose)
+   - [findOneAndUpdate (Find and Update a Single Document)](#findoneandupdate-find-and-update-a-single-document)
+   - [findByIdAndUpdate (Find by ID and Update)](#findbyidandupdate-find-by-id-and-update)
+
+5. [Deleting Documents](#deleting-documents-deleteone-and-deletemany-in-mongoose)
+   - [deleteOne (Deleting a Single Document)](#deleteone-deleting-a-single-document)
+   - [deleteMany (Deleting Multiple Documents)](#deletemany-deleting-multiple-documents)
+
+6. [Defining Schemas in Mongoose](#defining-schemas-in-mongoose)
+   - [Creating a Schema](#creating-a-schema)
+   - [Field Types](#field-types)
+   - [Validation and Options](#validation-and-options)
+   - [Defining References (Relationships)](#defining-references-relationships)
+   - [Creating a Model](#creating-a-model)
+   - [Advanced Schema Features](#advanced-schema-features)
+
 # Mongoose
 
 ## Inserting Documents: `insert` and `insertMany` in Mongoose

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit your message</title>
+</head>
+<body>
+    <div class="container">
+        <form method="post" action="/index/<%=chatObj._id%>?_method=PATCH">
+            <h3>Sender: <%= chatObj.sender %></h3>
+            <h3>Sender: <%= chatObj.receiver%></h3>
+            <textarea name="newMessage" placeholder="Enter your new message" cols="50" rows="6"><%= chatObj.message %></textarea><br>
+            <button>Submit</button>
+        </form>
+    </div>
+</body>
+</html>

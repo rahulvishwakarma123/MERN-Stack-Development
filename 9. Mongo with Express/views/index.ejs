@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>All posts</title>
+</head>
+<body>
+    <div class="container">
+        <% for(chat of allChats) { %>
+            <div class="chats">
+                <p><b>Sender : <i><%= chat.sender %></i></b></p>
+                <p><b>Receiver : <i><%= chat.receiver %></i></b></p>
+                <p><%= chat.message %></p>
+                <button><a href="/index/<%=chat._id%>/edit">Edit</a></button>
+                <form method="post" action="/index/<%=chat._id%>?_method=DELETE">
+                    <button>Delete</button>
+                </form>
+            </div>
+        <% } %>
+    </div>
+    <button class="createBtn"><a href="/new">Create a new chat</a></button>
+</body>
+</html>
