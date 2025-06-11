@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonderlust</title>
+</head>
+<body>
+    <h1>All lists</h1>
+    <button><a href="/listing/new">Create new listing</a></button>
+    <ul>
+        <% for(list of allLists) { %>
+            <li><a href="/listing/<%= list._id %>"><%= list.title %></a></li>
+        <% } %>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/form.css">
+    <title>wonderlust</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit your list</h1>
+        <form method="post" action="/listing/<%= list._id %>">
+        <input type="text" name='listing[title]' placeholder="Enter your title" value="<%= list.title %>">
+        <input type="number" name='listing[price]' placeholder="Enter your price" value="<%= list.price %>">
+        <input type="text" name='listing[image]' placeholder="Enter your image url/link" value="<%= list.image %>">
+        <textarea name='listing[description]' placeholder="Enter your description"><%= list.description %></textarea>
+        <input type="text" name='listing[location]' placeholder="Enter your location" value="<%= list.location %>">
+        <input type="text" name='listing[country]' placeholder="Enter your country" value="<%= list.country %>">
+        <button>submit</button>
+    </form>
+    </div>
+</body>
+</html>
