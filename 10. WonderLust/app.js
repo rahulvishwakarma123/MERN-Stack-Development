@@ -5,6 +5,7 @@ const path = require('path')
 const mongoose = require('mongoose')
 const listing = require('./models/listing.js')
 const methodOverride = require('method-override')
+const ejsMate = require('ejs-mate')
 
 const main = async () => {
     await mongoose.connect('mongodb://127.0.0.1:27017/wonderlust')
@@ -20,12 +21,19 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname,'views'))
 app.use(express.urlencoded({extended:true}))
 app.use(express.static(path.join(__dirname, 'public')))
+app.engine('ejs', ejsMate)
+app.use('/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstrap/dist')));
+
+// Home page route
+app.get('/',(req, res) => {
+    res.render('listing/home.ejs')
+})
 
 
 app.get('/listings', async (req, res) => {
     let allLists = await listing.find()
     // res.send(allLists)
-    res.render('listing/home.ejs', {allLists})
+    res.render('listing/listings.ejs', {allLists})
 })
 
 // new page route

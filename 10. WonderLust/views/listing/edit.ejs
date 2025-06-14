@@ -1,23 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/form.css">
-    <title>wonderlust</title>
-</head>
+<% layout('./layouts/boilerplate') %>
+
 <body>
-    <div class="container">
-        <h1>Edit your list</h1>
-        <form method="post" action="/listing/<%= list._id %>">
-        <input type="text" name='listing[title]' placeholder="Enter your title" value="<%= list.title %>">
-        <input type="number" name='listing[price]' placeholder="Enter your price" value="<%= list.price %>">
-        <input type="text" name='listing[image]' placeholder="Enter your image url/link" value="<%= list.image %>">
-        <textarea name='listing[description]' placeholder="Enter your description"><%= list.description %></textarea>
-        <input type="text" name='listing[location]' placeholder="Enter your location" value="<%= list.location %>">
-        <input type="text" name='listing[country]' placeholder="Enter your country" value="<%= list.country %>">
-        <button>submit</button>
-    </form>
+  <br>
+  <div class="row offset-2">
+    <h1>Edit your list</h1>
+
+    <div class="col-8">
+      <form method="post" action="/listing/<%= list._id %>">
+        <br>
+        <div class="mb-3">
+          <label for="title" class="form-label"><b>Title</b></label>
+          <input type="text" name='listing[title]' placeholder="Enter your title" value="<%= list.title %>" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label"><b>Description</b></label>
+          <textarea name='listing[description]' placeholder="Enter your description" class="form-control edit-desc"><%= list.description %></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label"><b>Image link</b></label>
+          <input type="text" name='listing[image]' placeholder="Enter your image url/link" value="<%= list.image %>" class="form-control">
+        </div>
+        <div class="row">
+          <div class="mb-3 col-md-4">
+            <label for="price" class="form-label"><b>Prise</b></label>
+            <input type="number" name='listing[price]' placeholder="Enter your price" value="<%= list.price %>" class="form-control">
+          </div>
+          <div class="mb-3 col-md-8">
+            <label for="country" class="form-label"><b>Country</b></label>
+            <input type="text" name='listing[country]' placeholder="Enter your country" value="<%= list.country %>" class="form-control">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="location" class="form-label"><b>Location</b></label>
+          <input type="text" name='listing[location]' placeholder="Enter your location" value="<%= list.location %>" class="form-control">
+        </div>
+        <br>
+        <button class="btn btn-dark">submit</button>
+      </form>
     </div>
+  </div>
 </body>
+
 </html>

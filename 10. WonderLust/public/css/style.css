@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+*{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+}
+.container{
+    
+}
+.navbar{
+    height: 5rem;
+    background-color: white !important;
+}
+
+/* cards */
+.card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100%;
+    object-fit: cover;
+}
+.card-body{
+    padding: 0 !important;
+}
+.card-text{
+    font-weight: 400;
+}
+.listing-link{
+    text-decoration: none;
+}
+
+/* Card Effect */
+.card-img-overlay{
+    opacity: 0;
+    transition: .3s;
+}
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+
+/* Edit page */
+
+.edit-desc{
+    resize: none;
+}
+
+/* Showpage */
+
+.show-img{
+    height: 20rem;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.social-media{
+    display: flex;
+    gap: 1rem;
+}
+.company-copyrights{
+    margin-top: 1rem;
+}
