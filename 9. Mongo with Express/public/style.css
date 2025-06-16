@@ -16,7 +16,7 @@ body{
     gap: 1rem;
 }
 .chats{
-    background-color: aquamarine;
+    background-color: rgba(127, 255, 212, 0.792);
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;

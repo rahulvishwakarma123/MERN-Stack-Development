@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>See your chat</title>
+</head>
+<body>
+    <div class="container">
+            <div class="chats">
+                <p><b>Sender : <i><%= chatObj.sender %></i></b></p>
+                <p><b>Receiver : <i><%= chatObj.receiver %></i></b></p>
+                <p><%= chatObj.message %></p>
+                <button><a href="/index/<%=chatObj._id%>/edit">Edit</a></button>
+                <form method="post" action="/index/<%=chatObj._id%>?_method=DELETE">
+                    <button>Delete</button>
+                </form>
+            </div>
+    </div>
+</body>
+</html>

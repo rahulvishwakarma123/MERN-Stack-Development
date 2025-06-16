@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const chat = require('../models/chats.js')
 async function main() {
-    mongoose.connect("mongodb://127.0.0.1:27017/whatsapp")
+    mongoose.connect("mongodb://127.0.0.1:27017/fakewhatsapp")
 }
 
 main().then(() =>{
@@ -33,5 +33,5 @@ chat.insertMany([
     { sender: "Ryan", receiver: "Quinn", message: "Will do it tonight.", created_at: new Date() },
     { sender: "Sara", receiver: "Tom", message: "Zoom link for the session?", created_at: new Date() },
     { sender: "Tom", receiver: "Sara", message: "Sent via email.", created_at: new Date() }
-  ]);
+  ]).then(() => console.log("Data inserted successfully"));
   
