@@ -9,12 +9,13 @@ let listingSchema = new Schema({
     },
     description: {
         type: String,
-        required: true
+        required: true,
+        maxLength: 50
     },
     image: {
         type: String,
-        set: (v) => v === "" ? "https://as1.ftcdn.net/jpg/02/99/64/04/1000_F_299640444_r43hVyuVUvqtwg3s3SH4tnEZjz3vHEmz.jpg" : v,
-        default: "https://as1.ftcdn.net/jpg/02/99/64/04/1000_F_299640444_r43hVyuVUvqtwg3s3SH4tnEZjz3vHEmz.jpg"
+        set: (v) => v === "" ? "https://static.thenounproject.com/png/1077596-200.png" : v,
+        default: "https://static.thenounproject.com/png/1077596-200.png"
     },
     price: {
         type: Number,
