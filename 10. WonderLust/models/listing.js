@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const Reviews = require('./reviews.js')
 const Schema = mongoose.Schema;
 
 let listingSchema = new Schema({
@@ -10,7 +10,7 @@ let listingSchema = new Schema({
     description: {
         type: String,
         required: true,
-        maxLength: 50
+        maxLength: 200
     },
     image: {
         type: String,
@@ -29,6 +29,18 @@ let listingSchema = new Schema({
         type: String,
         required: true
     },
+    review :[
+        {
+            type : Schema.Types.ObjectId,
+            ref : "Review"
+        }
+    ]
+})
+
+listingSchema.post('findOneAndDelete',async (listing) =>{
+    if(listing){
+        await Reviews.deleteMany({_id : {$in : listing.review}})
+    }
 })
 
 const listing = mongoose.model('listing', listingSchema);
