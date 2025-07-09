@@ -35,7 +35,7 @@
               <%= review.comment %>
             </p>
             <p>
-              <%= review.rating %>
+              <b><%= review.rating %> stars</b>
             </p>
             <form action="/listing/<%= list._id %>/review/<%= review._id %>?_method=DELETE" method="post">
               <button class="btn btn-sm btn-danger">Delete</button>
