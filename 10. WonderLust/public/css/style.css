@@ -38,6 +38,9 @@
 .card-img-overlay:hover{
     opacity: 0.2;
     background-color: white;
+    .listing-card h5, .listing-card p{
+        text-decoration: none;
+    }
 }
 
 /* Edit page */
