@@ -1,3 +1,8 @@
+if(process.env.NODE_ENV != 'production'){
+    require('dotenv').config()
+}
+
+
 const express = require('express')
 const app = express()
 const port = 3000
@@ -8,10 +13,13 @@ const ejsMate = require('ejs-mate')
 const ExpressError = require('./utils/ExpressError.js')
 const session = require('express-session')
 const flash = require('connect-flash')
+const passport = require('passport')
+const LocalStrategy = require('passport-local')
+const User = require('./models/user.js')
 
-
-const listing = require('./routers/listing.js')
-const review = require('./routers/review.js')
+const listingRouter = require('./routers/listing.js')
+const reviewRouter = require('./routers/review.js')
+const userRouter = require('./routers/user.js')
 
 
 const main = async () => {
@@ -49,9 +57,17 @@ const sessionOptions = {
 app.use(session(sessionOptions))
 app.use(flash())
 
+app.use(passport.initialize())
+app.use(passport.session())
+passport.use(new LocalStrategy(User.authenticate()))
+
+passport.serializeUser(User.serializeUser())
+passport.deserializeUser(User.deserializeUser())
+
 app.use((req,res,next) =>{
     res.locals.success = req.flash('success')
     res.locals.error = req.flash('error')
+    res.locals.currUser = req.user;
     next()
 })
 
@@ -60,20 +76,22 @@ app.get('/', (req, res) => {
     res.render('listing/home.ejs')
 })
 
-app.use('/listing', listing)
-app.use('/listing/:id/review',review)
+app.use('/listing', listingRouter)
+app.use('/listing/:id/review',reviewRouter)
+app.use('/', userRouter)
 
 
 
 // Error handling 
 app.use((err, req, res, next) => {
     let { status = 500, message = "Something went wrong" } = err
+    console.log(err)
     res.status(status).render('error.ejs', { message });
 })
 
-app.all(/.*/, (req, res, next) => {
-    next(new ExpressError(404, "Page not found"));
-});
+// app.all(/.*/, (req, res, next) => {
+//     next(new ExpressError(404, "Page not found"));
+// });
 
 
 

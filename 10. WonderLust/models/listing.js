@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Reviews = require('./reviews.js')
+const User = require('./user.js')
 const Schema = mongoose.Schema;
 
 let listingSchema = new Schema({
@@ -13,9 +14,8 @@ let listingSchema = new Schema({
         maxLength: 200
     },
     image: {
-        type: String,
-        set: (v) => v === "" ? "https://static.thenounproject.com/png/1077596-200.png" : v,
-        default: "https://static.thenounproject.com/png/1077596-200.png"
+        url:String,
+        filename: String,
     },
     price: {
         type: Number,
@@ -32,9 +32,13 @@ let listingSchema = new Schema({
     review :[
         {
             type : Schema.Types.ObjectId,
-            ref : "Review"
+            ref : 'Review'
         }
-    ]
+    ],
+    owner: {
+        type : Schema.Types.ObjectId,
+        ref : 'User'
+    }
 })
 
 listingSchema.post('findOneAndDelete',async (listing) =>{
