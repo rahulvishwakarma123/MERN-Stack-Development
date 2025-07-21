@@ -27,9 +27,9 @@ module.exports.showListing = async (req, res) => {
             }
         })
         .populate({
-            path : 'owner',
+            path: 'owner',
         })
-    
+
     if (!list) {
         req.flash('error', 'Listing you have requested does not exist!');
         return res.redirect('/listing');
@@ -44,7 +44,7 @@ module.exports.createListing = async (req, res) => {
     let filename = req.file.filename
     let newList = req.body.listing
     newList.owner = req.user._id
-    newList.image = {url, filename}
+    newList.image = { url, filename }
     let list = await Listing.create(newList)
     req.flash('success', 'New list created.')
     res.redirect('/listing')
@@ -68,7 +68,13 @@ module.exports.updateListing = async (req, res) => {
         throw new ExpressError(400, "Please provide valid data.")
     }
     let { id } = req.params
-    await Listing.findByIdAndUpdate(id, { ...req.body.listing })
+    let listing = await Listing.findByIdAndUpdate(id, { ...req.body.listing })
+    if (typeof req.file !== 'undefined') {
+        let url = req.file.path
+        let filename = req.file.filename
+        listing.image = { url, filename }
+        await listing.save()
+    }
     req.flash('success', 'List Upadated Successfully!')
     res.redirect(`/listing/${id}`)
 }

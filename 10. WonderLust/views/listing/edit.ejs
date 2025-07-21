@@ -6,7 +6,7 @@
     <h1>Edit your list</h1>
 
     <div class="col-8">
-      <form method="post" action="/listing/<%= list._id %>?_method=PATCH" novalidate class="needs-validation">
+      <form method="post" action="/listing/<%= list._id %>?_method=PATCH" novalidate class="needs-validation" enctype="multipart/form-data">
         <br>
         <div class="mb-3">
           <label for="title" class="form-label"><b>Title</b></label>
@@ -19,8 +19,8 @@
           <div class="invalid-feedback">Discription should be short.</div>
         </div>
         <div class="mb-3">
-          <label for="image" class="form-label"><b>Image link</b></label>
-          <input type="text" name='listing[image]' placeholder="Enter your image url/link" value="<%= list.image %>" class="form-control">
+          <label for="image" class="form-label"><b>Upload New Image</b></label>
+          <input type="file" name='listing[image]' placeholder="Enter your image url/link" class="form-control">
         </div>
         <div class="row">
           <div class="mb-3 col-md-4">

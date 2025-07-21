@@ -22,8 +22,8 @@ router.get('/:id/edit', isLoggedIn, isOwner, wrapAsync(listingController.renderE
 
 
 router.route('/:id')
-.patch(validateListing, isOwner, wrapAsync(listingController.updateListing))
 .get(wrapAsync(listingController.showListing))
+.patch(isLoggedIn, isOwner, upload.single('listing[image]'), validateListing, wrapAsync(listingController.updateListing))
 .delete(isLoggedIn, isOwner, wrapAsync(listingController.deleteListing))
 
 module.exports = router;
