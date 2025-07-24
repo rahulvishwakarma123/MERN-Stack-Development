@@ -1,31 +1,53 @@
-<nav class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-body-light border-bottom sticky-top mb-3">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">WonderLust</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+    <!-- Logo -->
+    <a class="logo-link" href="/">
+      <h1 class="navbar-logo color">Wonderlust</h1>
+    </a>
+
+    <!-- Hamburger / Toggler -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" aria-current="page" href="/">Home</a>
-        <a class="nav-link" href="/listing">Listings</a>
-        <a class="nav-link" href="/listing/new">Add new listing</a>
-      </div>
-      <div class="navbar-nav">
-        <div class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Options
+
+    <!-- Navbar Links and Profile Dropdown -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/listing">Explore</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/listing/new">Add post</a>
+        </li>
+      </ul>
+
+      <!-- Right icons -->
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
+        <!-- Notifications icon -->
+        
+
+        <!-- Profile dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="data:image/png;base64,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" alt="Profile" class="rounded-circle" width="32" height="32">
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Your Profile</a></li>
             <% if (!currUser) { %>
-            <a class="dropdown-item" href="/signup">SignUp</a>
-            <a class="dropdown-item" href="/login">LogIn</a>
+              <li><a class="dropdown-item" href="/login">Sign in</a></li>
+              <li><a class="dropdown-item" href="/signup">Sign up</a></li>
             <% } %>
             <% if (currUser) { %>
-            <a class="dropdown-item" href="/logout">LogOut</a>
-            <% } %>
-          </div>
-        </div>
-      </div>
+              <li><a class="dropdown-item" href="/logout">Sign out</a></li>
+           <% } %>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>

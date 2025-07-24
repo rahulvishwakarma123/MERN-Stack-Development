@@ -5,7 +5,7 @@ const listing = require('../models/listing.js');
 
 // Connect to MongoDB
 async function main() {
-    await mongoose.connect('mongodb://localhost:27017/wonderlust')
+    await mongoose.connect(process.env.ATLAS_URL)
 }
 
 main().then(() => {
@@ -16,7 +16,7 @@ main().then(() => {
 
 async function initDb() {
     await listing.deleteMany({})
-    initdata.data = initdata.data.map((obj) => ({...obj, owner: '687263e35da23f56d5530385' }))
+    initdata.data = initdata.data.map((obj) => ({...obj, owner: '687a4dfa85da4278aa887187' }))
     await listing.insertMany(initdata.data)
     console.log('Data has been initialized')
 }

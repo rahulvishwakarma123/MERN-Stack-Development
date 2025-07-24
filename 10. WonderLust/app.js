@@ -22,10 +22,10 @@ const userRouter = require('./routers/user.js')
 
 
 const main = async () => {
-    await mongoose.connect('mongodb://127.0.0.1:27017/wonderlust')
+    await mongoose.connect(process.env.ATLAS_URL)
 };
 main().then(res => {
-    console.log('Connected to MongoDB')
+    console.log('Connected to AtlasDB')
 }).catch(err => {
     console.log(err)
 })
